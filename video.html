@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <style>
+        body,
+        html {
+            padding: 0;
+            margin: 0;
+        }
+
+        #container {
+            max-width: 1280px;
+            width: 100%;
+            height: 720px;
+            position: relative;
+            /* background-image: url('assets/thumbnail.png'); */
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+
+        #interactive-area {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            width: 1280px;
+            height: 720px;
+            display: flex;
+        }
+
+        #video-area {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            margin-top: 10px;
+        }
+
+        #video>video {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+    <script src="https://cdn.plyr.io/3.6.7/plyr.polyfilled.js"></script>
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.7/plyr.css" />
+</head>
+
+<body>
+    <div id="container">
+        <div id="interactive-area">
+            <div id="video-area">
+                <iframe src="https://drive.google.com/file/d/1P0aiYbdjLJw4mMkVsnA0XLW9jrEirKVa/preview" width="1280"
+                    height="720"></iframe>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    const player = new Plyr('video', {
+        controls: ['restart', 'volume', 'mute'],
+        hideControls: false
+    });
+</script>
+
+</html>
